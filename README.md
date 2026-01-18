@@ -1,40 +1,23 @@
 Active Directory & Group Policy Home Lab
-Overview
+Project Description
 
-In this project, I built and tested an Active Directory home lab to understand how Windows domains and Group Policy are implemented and managed in enterprise environments. The lab consisted of a Windows Server domain controller and a domain-joined Windows 11 client, allowing me to simulate centralized authentication, user management, and policy enforcement.
+In this project, I built and tested an Active Directory home lab to understand how Windows domains and Group Policy are used in enterprise environments. I deployed a Windows Server system and promoted it to a Domain Controller, configuring Active Directory Domain Services (AD DS) and DNS to support centralized authentication and management.
 
-Environment
+After the domain was created, I joined a Windows 11 client to the domain and verified connectivity and authentication using domain credentials. This required troubleshooting DNS resolution, static IP configuration, and domain communication to ensure the client could properly locate the Domain Controller.
 
-Windows Server (Domain Controller)
+I then created Organizational Units (OUs) and domain user accounts to simulate a real enterprise structure. A custom Group Policy Object (GPO) was created and linked to a specific OU to enforce user-level restrictions. These restrictions were validated by logging in as a restricted domain user and confirming that administrative tools such as Command Prompt were blocked.
 
-Active Directory Domain Services (AD DS)
+To further demonstrate proper Group Policy scoping, I created an additional OU for unrestricted users and tested policy behavior by logging in with different domain accounts on the same Windows 11 system. This confirmed that policies applied only to users in the targeted OU and were removed when users were moved outside of it.
 
-DNS
+Technical Tasks Completed
 
-Windows 11 domain-joined client
-
-Isolated virtual network
-
-Implementation
-
-I deployed a Windows Server system and promoted it to a Domain Controller, creating a new Active Directory domain and configuring DNS for internal name resolution. After validating domain functionality, I joined a Windows 11 client machine to the domain and confirmed authentication using domain credentials.
-
-To simulate an enterprise structure, I created Organizational Units (OUs) and domain user accounts. I then created a custom Group Policy Object (GPO) and linked it to a specific OU to enforce user-level restrictions. These restrictions were applied only to selected users, demonstrating how Group Policy scope and inheritance control user behavior without affecting all domain users.
-
-To further validate policy scoping, I compared restricted and unrestricted domain users on the same client system. Restricted users were prevented from accessing tools such as Command Prompt, while unrestricted users retained full access. Moving users between OUs confirmed that Group Policy enforcement was intentional and correctly scoped.
-
-Skills Demonstrated
-
-Active Directory administration
-
-DNS configuration and troubleshooting
-
-Domain join and authentication
-
-Organizational Unit design
-
-Group Policy creation and scoping
-
-User-level security enforcement
-
-Enterprise troubleshooting practices
+• Deployed a Windows Server system as an Active Directory Domain Controller
+• Installed and configured Active Directory Domain Services (AD DS) and DNS
+• Created a new Active Directory domain and verified internal name resolution
+• Joined a Windows 11 client machine to the domain
+• Created Organizational Units (OUs) to separate restricted and unrestricted users
+• Created and managed domain user accounts
+• Built and linked a custom Group Policy Object (GPO) to a specific OU
+• Applied user-level restrictions using Group Policy
+• Verified Group Policy enforcement by testing restricted vs unrestricted users
+• Troubleshot DNS, domain join, and Group Policy application issues
