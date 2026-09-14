@@ -106,12 +106,3 @@ Throughout the lab, issues related to DNS resolution, static vs dynamic IP addre
 This lab reinforced how critical DNS is to Active Directory functionality and how improper network configuration can prevent domain operations entirely. It also demonstrated the importance of OU design when applying Group Policy, as well as the impact policies can have on end users if applied incorrectly.
 
 Most importantly, the lab provided hands-on experience troubleshooting real issues rather than following a scripted setup, which closely reflects enterprise IT environments.
-
----
-
-## Future Enhancements
-- Implement security group filtering for GPOs
-- Add password complexity and account lockout policies
-- Introduce a second client machine to test multi-user scenarios
-- Add login scripts or drive mappings via Group Policy
-- Create documentation for help desk–style troubleshooting workflows
