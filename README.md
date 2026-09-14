@@ -26,7 +26,7 @@ The Windows Server was configured as the primary domain controller for the `home
 
 A static IP address was assigned to the domain controller to prevent DNS and authentication issues that can occur when a server’s address changes. This ensured that clients could reliably locate the domain controller during login and policy processing.
 
-**Screenshot:** Server Manager dashboard showing AD DS and DNS roles installed.
+![Server Manager Dashboard](01-server-manager-dashboard.png)
 
 ---
 
@@ -35,7 +35,7 @@ DNS plays a critical role in Active Directory, so DNS configuration and validati
 
 Name resolution was tested using ping and domain lookups to ensure the client could correctly resolve `homelab.local` and locate the domain controller. Several DNS-related issues were encountered and resolved during testing, reinforcing how tightly AD depends on DNS.
 
-**Screenshot:** DNS Manager showing forward lookup zone and host records.
+![DNS Manager Forward Lookup Zone](02-dns-manager-forward-lookup-zone.png)
 
 ---
 
@@ -44,7 +44,7 @@ The Windows 11 client was configured to use the domain controller as its primary
 
 Once joined, the system was rebooted and confirmed to be operating as a domain member. This step validated that DNS, network configuration, and Active Directory services were functioning correctly.
 
-**Screenshot:** Windows 11 system properties showing domain membership.
+![Windows 11 Domain Joined](03-windows11-domain-joined.png)
 
 ---
 
@@ -57,7 +57,7 @@ Two main OUs were used:
 
 User accounts were created and placed into their respective OUs to test policy scope and inheritance behavior.
 
-**Screenshot:** Active Directory Users and Computers showing OUs and user accounts.
+![Test User AD Properties](05-test-user-ad-properties.png)
 
 ---
 
@@ -66,7 +66,7 @@ A custom Group Policy Object (GPO) was created and linked specifically to the `T
 
 The purpose of this configuration was to demonstrate how administrators can limit system access for certain users while leaving others unaffected. The GPO was intentionally scoped to an OU rather than the entire domain to highlight best practices in policy targeting.
 
-**Screenshot:** Group Policy Management showing GPO linked to the TestUsers OU.
+![GPO Linked to TestUsers OU](04-gpo-linked-to-testusers-ou.png)
 
 ---
 
@@ -77,8 +77,8 @@ A second user in the `UnrestrictedUsers` OU was able to access Command Prompt no
 
 This comparison reinforced how OU placement and GPO scope directly affect user experience.
 
-**Screenshot:** Command Prompt blocked for restricted user.  
-**Screenshot:** Command Prompt working for unrestricted user.
+![GPO CMD Restriction Applied](06-gpo-cmd-restriction-applied.png)  
+![Unrestricted User AD Properties](07-unrestricted-user-ad-properties.png)
 
 ---
 
@@ -87,7 +87,7 @@ To confirm domain authentication, the `whoami` command was used under an unrestr
 
 Throughout the lab, issues related to DNS resolution, static vs dynamic IP addressing, and Group Policy restrictions were identified and resolved, mirroring real-world enterprise troubleshooting scenarios.
 
-**Screenshot:** whoami output showing domain user context.
+![Whoami Domain Verification](08-whoami-domain-verification.png)
 
 ---
 
@@ -115,4 +115,3 @@ Most importantly, the lab provided hands-on experience troubleshooting real issu
 - Introduce a second client machine to test multi-user scenarios
 - Add login scripts or drive mappings via Group Policy
 - Create documentation for help desk–style troubleshooting workflows
-
